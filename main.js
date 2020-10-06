@@ -7,21 +7,33 @@ const token = sourceFile.myToken;
 client.login(token);
 
 client.on('message', message => {
+    if (message.author.bot) {
+        return;
+    }
+
     msg = message.content.toLowerCase();
 
-    if (msg === 'hello') {
+    if (msg.includes('faggot') || msg.includes('fuck') || msg.includes('bitch')) {
+        message.channel.send('UH OH STINKY');
+    }
+
+    else if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey') || msg.includes('sup')) {
         message.channel.send("Hey there! <@" + message.author.id + ">");
-    }
-
-    if (msg.includes("uwu")) {
+    } 
+    
+    else if (msg.includes("uwu")) {
         message.channel.send("stfu weeb");
-    }
-
-    if (msg.includes("f") && msg.includes("chat")) {
+    } 
+    
+    else if (msg.includes("f") && msg.includes("chat")) {
         message.channel.send("F");
     } 
-
-    if (msg === 'wow') {
+    
+    else if (msg == "f") {
+        message.channel.send("F");
+    } 
+    
+    else if (msg === 'wow') {
         message.channel.send("monkaHmm");
     }
 });
